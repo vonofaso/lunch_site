@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес-ланчи с доставкой | Вход</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="logo">
+            <h1>Доставка бизнес-ланчей по Москве</h1>
+            <a href="login.html" class="join-btn">ВХОД</a>
+        </div>
+    </header>
+
+    <nav class="main_menu">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="lunch.html">Собрать ланч</a></li>
+            <li><a href="checkout.html">Оформить заказ</a></li>
+            <li><a href="orders.html" class="active">Заказы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-content">
+        <section class="login">
+            <h4>Вход в профиль</h4>
+            <form action="https://httpbin.org/post" method="POST" class="login-form">
+                <div class="form-group">
+                    <label for="login">Логин</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Запомнить меня</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-btn">Войти</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ООО "Бизнес-ланчи с доставкой"</p>
+        </div>
+    </footer>
+</body>
+</html>

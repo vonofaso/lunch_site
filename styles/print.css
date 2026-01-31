@@ -1,0 +1,77 @@
+@media print {
+    .header,
+    .main_menu,
+    .join-btn,
+    .add-btn,
+    .footer {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000;
+        background: white !important;
+        margin: 0;
+        padding: 1cm;
+        font-family: "Times New Roman", serif;
+    }
+    
+    .main-content {
+        background: white !important;
+        padding: 0 !important;
+    }
+    
+    .dishes-grid {
+        display: block !important;
+    }
+    
+    .dish-card {
+        break-inside: avoid;
+        border: 1pt solid #ccc !important;
+        margin-bottom: 0.5cm;
+        box-shadow: none !important;
+        filter: none !important;
+        padding: 0.5cm !important;
+    }
+    
+    .dish-card:hover {
+        border: 1pt solid #ccc !important;
+    }
+    
+    .dish-card img {
+        display: none;
+    }
+    
+    .dishes-section h2 {
+        font-size: 14pt;
+        color: #000 !important;
+        break-after: avoid;
+    }
+    
+    .dish-name {
+        font-size: 12pt !important;
+        color: #000 !important;
+    }
+    
+    .dish-price {
+        font-size: 12pt !important;
+        color: #000 !important;
+    }
+    
+    .dish-weight {
+        color: #666 !important;
+    }
+    
+    * {
+        background: transparent !important;
+    }
+    
+    h2 {
+        page-break-after: avoid;
+    }
+    
+    .dish-card {
+        page-break-inside: avoid;
+    }
+}

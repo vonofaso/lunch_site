@@ -1,0 +1,847 @@
+.dishes-section {
+    margin-bottom: 3rem;
+}
+
+.dishes-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    background: white;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    transition: all 0.3s ease;
+}
+
+.dish-card:hover {
+    border: 2px solid tomato;
+}
+
+.dish-card:hover .add-btn {
+    background: tomato;
+    color: white;
+}
+
+.dish-card img {
+    width: 100%;
+    border-radius: 35px;
+    margin-bottom: 1rem;
+}
+
+.dish-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
+}
+
+.dish-weight {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.dish-price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.add-btn {
+    background: #f1eee9;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Work Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: auto;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background: tomato;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .dish-card {
+        padding: 25px 30px;
+    }
+    
+    .dishes-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .dish-card {
+        padding: 20px 25px;
+        margin: 0 10px;
+    }
+    
+    .dishes-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .main-content {
+        padding: 1rem 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .dish-card {
+        padding: 15px 20px;
+        margin: 0 5px;
+    }
+    
+    .dish-name {
+        font-size: 1.1rem;
+    }
+    
+    .dish-price {
+        font-size: 1.2rem;
+    }
+}
+
+.order-form-section {
+    background: white;
+    padding: 2rem 20px;
+    margin-top: 2rem;
+}
+
+.order-form-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.order-form {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.order-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.order-summary, .customer-data {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.order-summary h3, .customer-data h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.5rem;
+    border-bottom: 2px solid tomato;
+    padding-bottom: 0.5rem;
+}
+
+.order-summary .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.order-summary label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.order-summary select,
+.order-summary textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 1rem;
+}
+
+.order-summary select:focus,
+.order-summary textarea:focus {
+    outline: none;
+    border-color: tomato;
+}
+
+.order-summary textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.customer-data .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.customer-data label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.customer-data input[type="text"],
+.customer-data input[type="email"],
+.customer-data input[type="tel"],
+.customer-data input[type="time"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: "Work Sans", sans-serif;
+}
+
+.customer-data input:focus {
+    outline: none;
+    border-color: tomato;
+}
+
+.customer-data .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-data .checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.delivery-note, .time-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+    font-style: italic;
+}
+
+.customer-data .radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.time-input {
+    margin: 1rem 0;
+}
+
+.time-input input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.submit-order-btn {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+
+.submit-order-btn {
+    background: tomato;
+    color: white;
+}
+
+.submit-order-btn:hover {
+    background: #ff6347;
+}
+
+.contact-info {
+    text-align: center;
+    padding: 2rem;
+    background: #333;
+    color: white;
+    margin-top: 2rem;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (max-width: 800px) {
+    .order-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .order-form-section {
+        padding: 1rem 10px;
+    }
+    
+    .order-summary, .customer-data {
+        padding: 1.5rem;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .reset-btn, .submit-order-btn {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .contact-info p {
+        font-size: 1rem;
+    }
+}
+
+
+.dish-card.selected {
+    border: 2px solid tomato;
+}
+
+.order-category {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.order-cost {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+.dishes-grid:empty::before {
+    content: "Нет доступных блюд";
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: tomato;
+    color: tomato;
+}
+
+.filter-btn.active {
+    background: tomato;
+    color: white;
+    border-color: tomato;
+}
+
+@media (max-width: 600px) {
+    .filters {
+        gap: 5px;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+.no-dishes {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 2rem;
+    grid-column: 1 / -1;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.combo-section {
+    padding: 2rem 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.combo-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.combo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.combo-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.combo-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    min-height: 200px;
+    justify-content: center;
+}
+
+.combo-dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.combo-dish img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.combo-dish span {
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+    font-weight: 500;
+}
+
+.combo-info {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.combo-info p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+    .combo-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .combo-item {
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .combo-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .combo-item {
+        padding: 1rem;
+        min-height: 150px;
+    }
+    
+    .combo-dish img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .combo-dish span {
+        font-size: 0.8rem;
+    }
+}
+
+.notification-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.notification-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.notification-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.notification-ok {
+    background: #f1eee9;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Work Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    min-width: 120px;
+}
+
+.notification-ok:hover {
+    background: tomato;
+    color: white;
+}
+
+.combo-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.combo-item:hover {
+    border-color: #ddd;
+}
+
+.combo-item.selected {
+    border: 2px solid tomato;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.combo-item.selected .combo-dish img {
+    transform: scale(1.1);
+}
+
+@keyframes comboSelect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.combo-item.selected {
+    animation: comboSelect 0.3s ease;
+}
+
+/* Sticky Order Panel */
+.sticky-order-panel {
+    position: sticky;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 400px;
+    margin: 0 auto;
+    display: none;
+}
+
+.sticky-panel-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.order-total {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.checkout-link {
+    padding: 12px 24px;
+    background: tomato;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: "Work Sans", sans-serif;
+    font-size: 1rem;
+}
+
+.checkout-link:hover:not(:disabled) {
+    background: #ff6347;
+}
+
+.checkout-link:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Checkout Page Styles */
+.order-composition {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order-composition h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.order-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkout-dish-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    background: #fafafa;
+}
+
+.dish-info {
+    flex-grow: 1;
+}
+
+.dish-price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: tomato;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.dish-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.dish-weight {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.remove-btn {
+    padding: 8px 16px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background: #ff3742;
+}
+
+.empty-order-message {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.empty-order-message a {
+    color: tomato;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.empty-order-message a:hover {
+    text-decoration: underline;
+}
+
+/* Contact info in footer */
+.contact-info {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sticky-order-panel {
+        bottom: 10px;
+        margin: 0 10px;
+        max-width: none;
+    }
+    
+    .sticky-panel-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .checkout-dish-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .remove-btn {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-composition {
+        padding: 1rem;
+    }
+    
+    .checkout-dish-card {
+        padding: 1rem;
+    }
+}
+
+/* Стили для поля API ключа */
+.api-key-help {
+    color: #666;
+    font-size: 0.85em;
+    display: block;
+    margin-top: 5px;
+}
+
+input:invalid {
+    border-color: #ff4444;
+}
+
+input:valid {
+    border-color: #00C851;
+}
+
+/* Стили для индикатора загрузки */
+.submit-order-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

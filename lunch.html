@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч | Бизнес-ланчи с доставкой</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/lunch.css">
+    <link rel="stylesheet" href="styles/print.css" media="print">
+    <script src="js/storage.js"></script>
+    <script src="js/dishes.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/validation.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="Логотип компании">
+            <h1>Доставка бизнес-ланчей по Москве</h1>
+            <a href="login.html" class="join-btn">ВХОД</a>
+        </div>
+    </header>
+
+    <nav class="main_menu">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="lunch.html">Собрать ланч</a></li>
+            <li><a href="checkout.html">Оформить заказ</a></li>
+            <li><a href="orders.html" class="active">Заказы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <section class="combo-section">
+        <h2>Доступные для заказа комбо</h2>
+        <div class="combo-container">
+    <div class="combo-row">
+        <div class="combo-item" data-combo="full">
+            <div class="combo-dish">
+                <img src="img/dishes/icon_soup.png" alt="Суп">
+                <span>Суп</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_main_course.png" alt="Главное блюдо">
+                <span>Главное блюдо</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_salad.png" alt="Салат">
+                <span>Салат</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_drink.png" alt="Напиток">
+                <span>Напиток</span>
+            </div>
+        </div>
+        
+        <div class="combo-item" data-combo="soup-main-drink">
+            <div class="combo-dish">
+                <img src="img/dishes/icon_soup.png" alt="Суп">
+                <span>Суп</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_main_course.png" alt="Главное блюдо">
+                <span>Главное блюдо</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_drink.png" alt="Напиток">
+                <span>Напиток</span>
+            </div>
+        </div>
+        
+        <div class="combo-item" data-combo="soup-salad-drink">
+            <div class="combo-dish">
+                <img src="img/dishes/icon_soup.png" alt="Суп">
+                <span>Суп</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_salad.png" alt="Салат">
+                <span>Салат</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_drink.png" alt="Напиток">
+                <span>Напиток</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="combo-row">
+        <div class="combo-item" data-combo="main-salad-drink">
+            <div class="combo-dish">
+                <img src="img/dishes/icon_main_course.png" alt="Главное блюдо">
+                <span>Главное блюдо</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_salad.png" alt="Салат">
+                <span>Салат</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_drink.png" alt="Напиток">
+                <span>Напиток</span>
+            </div>
+        </div>
+        
+        <div class="combo-item" data-combo="main-drink">
+            <div class="combo-dish">
+                <img src="img/dishes/icon_main_course.png" alt="Главное блюдо">
+                <span>Главное блюдо</span>
+            </div>
+            <div class="combo-dish">
+                <img src="img/dishes/icon_drink.png" alt="Напиток">
+                <span>Напиток</span>
+            </div>
+        </div>
+        
+        <div class="combo-item" data-combo="dessert-only">
+            <div class="combo-dish">
+                <img src="img/dishes/icon_dessert.png" alt="Десерт">
+                <span>Десерт</span>
+            </div>
+            <div class="combo-info">
+                <p>Можно добавить к любому заказу</p>
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="dishes-section" id="soup-section">
+            <h2>Выберите суп</h2>
+            <div class="filters"></div>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <section class="dishes-section" id="main-section">
+            <h2>Выберите главное блюдо</h2>
+            <div class="filters"></div>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <section class="dishes-section" id="salad-section">
+            <h2>Выберите салат или стартер</h2>
+            <div class="filters"></div>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <section class="dishes-section" id="drink-section">
+            <h2>Выберите напиток</h2>
+            <div class="filters"></div>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <section class="dishes-section" id="dessert-section">
+            <h2>Выберите десерт</h2>
+            <div class="filters"></div>
+            <div class="dishes-grid"></div>
+        </section>
+    </main>
+    <div class="sticky-order-panel" id="sticky-order-panel">
+        <div class="sticky-panel-content">
+            <div class="order-total">
+                <span class="order-total-price">0Р</span>
+            </div>
+            <a href="checkout.html" class="checkout-link">Перейти к оформлению</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ООО "Бизнес-ланчи с доставкой"</p>
+        </div>
+    </footer>
+    <!-- Модальное окно для API ключа -->
+    <div id="api-key-modal" class="notification-overlay" style="display: none;">
+        <div class="notification" style="max-width: 500px;">
+            <div class="notification-content">
+                <h3 style="margin-bottom: 1rem; color: #333;">Настройка API ключа</h3>
+                
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem; color: #333;">
+                        <i class="fas fa-key" style="color: tomato;"></i> Как получить API ключ
+                    </h4>
+                    <ol style="text-align: left; margin-left: 1rem;">
+                        <li>Перейдите по ссылке: 
+                            <a href="https://online.mospolytech.ru/mod/lti/view.php?id=528783" target="_blank" 
+                            style="color: tomato; text-decoration: none;">
+                                Получить API ключ
+                            </a>
+                        </li>
+                        <li>Скопируйте ваш уникальный ключ (формат: 123e4567-e89b-12d3-a456-426655440000)</li>
+                        <li>Вставьте ключ в поле ниже и нажмите "Сохранить"</li>
+                    </ol>
+                    <div style="background: #fff3cd; color: #856404; padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                        <strong>Важно:</strong> Никому не сообщайте ваш ключ!
+                    </div>
+                </div>
+                
+                <form id="api-key-form">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="api-key-input" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">
+                            Ваш API ключ:
+                        </label>
+                        <input type="text" id="api-key-input" name="api_key" required 
+                            placeholder="Введите ваш API ключ (формат UUID)"
+                            style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-family: 'Work Sans', sans-serif;">
+                    </div>
+                    <button type="submit" class="notification-ok" style="margin: 0;">
+                        <i class="fas fa-save"></i> Сохранить ключ
+                    </button>
+                </form>
+                
+                <div id="api-status" style="margin-top: 1rem; display: none;"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Управление модальным окном API ключа
+    const apiModal = document.getElementById('api-key-modal');
+    const apiKeyForm = document.getElementById('api-key-form');
+    const apiKeyInput = document.getElementById('api-key-input');
+    const apiStatus = document.getElementById('api-status');
+
+    function openApiModal() {
+        apiModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Загружаем сохраненный ключ если есть
+        const savedKey = localStorage.getItem('lunchProApiKey');
+        if (savedKey) {
+            apiKeyInput.value = savedKey;
+        }
+    }
+
+    function closeApiModal() {
+        apiModal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    function showApiStatus(message, isSuccess) {
+        apiStatus.style.display = 'block';
+        apiStatus.textContent = message;
+        apiStatus.style.color = isSuccess ? '#28a745' : '#dc3545';
+        apiStatus.style.padding = '0.5rem';
+        apiStatus.style.borderRadius = '4px';
+        apiStatus.style.background = isSuccess ? '#d4edda' : '#f8d7da';
+    }
+
+    apiKeyForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const key = apiKeyInput.value.trim();
+        
+        if (!key) {
+            showApiStatus('Пожалуйста, введите API ключ', false);
+            return;
+        }
+
+        const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+        if (!uuidRegex.test(key)) {
+            showApiStatus('Неверный формат ключа. Ключ должен быть в формате UUID.', false);
+            return;
+        }
+
+        try {
+            // Сохраняем ключ
+            localStorage.setItem('lunchProApiKey', key);
+            
+            // Показываем успешное сообщение
+            showApiStatus('Ключ успешно сохранен!', true);
+            
+            // Закрываем модальное окно через 2 секунды
+            setTimeout(() => {
+                closeApiModal();
+                // Перезагружаем страницу для применения ключа
+                window.location.reload();
+            }, 2000);
+        } catch (error) {
+            showApiStatus('Ошибка: ' + error.message, false);
+        }
+    });
+
+    // Показываем модальное окно при загрузке если ключа нет
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedKey = localStorage.getItem('lunchProApiKey');
+        if (!savedKey) {
+            setTimeout(openApiModal, 1000);
+        }
+    });
+
+    // Закрытие по клику вне модального окна
+    apiModal.addEventListener('click', function(e) {
+        if (e.target === apiModal) {
+            closeApiModal();
+        }
+    });
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && apiModal.style.display === 'flex') {
+            closeApiModal();
+        }
+    });
+    </script>
+</body>
+</html>
